@@ -1,0 +1,147 @@
+.sk-viewer {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2001;
+  &.show {
+    display: block;
+  }
+  &.before-show {
+    animation: slider-in 0.3s ease-in-out;
+  }
+  &.before-hide {
+    animation: slider-out 0.3s ease-in-out;
+  }
+}
+
+.viewer-scroll-lock {
+  overflow: hidden;
+}
+
+.sk-viewer-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  background: #000;
+}
+
+.sk-viewer-btn {
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #606266;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0.8;
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.sk-viewer-icon {
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  fill: currentColor;
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+.sk-viewer-tools {
+  left: 50%;
+  bottom: 32px;
+  transform: translate(-50%);
+  width: 282px;
+  height: 45px;
+  padding: 0 23px;
+  background-color: #606266;
+  border-radius: 22.5px;
+  position: absolute;
+  z-index: 1;
+  font-size: 23px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0.8;
+  box-sizing: border-box;
+  user-select: none;
+  .sk-viewer-icon {
+    cursor: pointer;
+  }
+}
+
+.sk-viewer-inner {
+  position: static;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.sk-viewer-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-style: none;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+.sk-viewer_close {
+  top: 42px;
+  right: 42px;
+}
+
+.sk-viewer_prev {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 42px;
+}
+
+.sk-viewer_next {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 42px;
+}
+
+@keyframes slider-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slider-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}

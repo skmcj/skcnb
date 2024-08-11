@@ -1,0 +1,68 @@
+.sk-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.sk-profile-name {
+  font-family: 'yozai';
+  font-size: 18px;
+  color: var(--profile-name);
+  margin-bottom: 14px;
+}
+.sk-profile-sign {
+  font-family: 'yozai';
+  font-size: 16px;
+  color: var(--profile-sign);
+  margin-bottom: 8px;
+}
+
+.sk-profile-item {
+  & + .sk-profile-item {
+    margin-left: 3px;
+    &::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 100%;
+      border-radius: 1.5px;
+      background-color: var(--profile-msg-t);
+      position: absolute;
+      left: -3px;
+      top: 0;
+    }
+  }
+}
+
+.sk-profile-link {
+  outline: none;
+  text-decoration: none;
+  position: relative;
+}
+
+.sk-profile-msgs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sk-profile-msg {
+  box-sizing: border-box;
+  padding: 3px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  .title {
+    font-family: 'zcool-hyt';
+    font-size: 16px;
+    color: var(--profile-msg-t);
+    margin-bottom: 3px;
+  }
+  .text {
+    font-family: 'yozai';
+    font-size: 16px;
+    color: var(--profile-msg-p);
+  }
+}

@@ -1,0 +1,323 @@
+@import './var.scss';
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg);
+  line-height: 1.15;
+  overflow-x: hidden;
+  // overflow: hidden;
+  // min-width: 1060px;
+}
+
+#top_nav,
+#header,
+#sideBar {
+  display: none;
+}
+
+#header,
+#main,
+#footer {
+  background-color: var(--bg);
+}
+
+#main {
+  padding-top: 0.8rem;
+}
+
+#mainContent {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 12%;
+  display: flex;
+  min-height: 100vh;
+}
+
+#blog_c1,
+#blog_c1 img {
+  width: auto;
+  text-align: center;
+}
+#blog_c1 img {
+  border-radius: 12px;
+}
+.sk-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sk-flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.sk-flex-col {
+  flex-direction: column;
+}
+
+.cnb-code-toolbar {
+  top: 9px;
+}
+
+// TreeCategoryPopup
+.tree-categories-container {
+  ul {
+    margin: 6px 0;
+    padding: 0;
+  }
+}
+.tree-categories-item {
+  list-style: none;
+}
+.tree-categories-item-title-right {
+  a {
+    text-decoration: none;
+    /* 状态一: 未被访问过的链接 */
+    &:link {
+      color: var(--ac-text);
+    }
+
+    /* 状态二: 已经访问过的链接 */
+    &:visited {
+      color: var(--ac-sctext);
+    }
+
+    /* 状态三: 鼠标划过(停留)的链接(默认红色) */
+    &:hover {
+      color: var(--theme);
+    }
+    /* 状态四: 被点击的链接 */
+    &:active {
+      color: var(--theme);
+    }
+  }
+}
+
+.lock-scroll {
+  overflow: hidden;
+  // padding-right: 5px;
+}
+
+@media (min-width: 768px) {
+  body {
+    min-width: auto;
+  }
+  #mainContent {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  #mainContent {
+    padding: 0;
+    justify-content: center;
+  }
+}
+
+.ib-tumblr {
+  color: #34465d;
+}
+.ib-pinterest {
+  color: #bd081c;
+}
+.ib-steam {
+  color: #1b2838;
+}
+.ib-coding {
+  color: #32363f;
+}
+.ib-kugou {
+  color: #00a9ff;
+}
+.ib-cnblog-f {
+  color: #005da6;
+}
+.ib-epic {
+  color: #18181c;
+}
+.ib-gmail {
+  color: #cb3f2c;
+}
+.ib-zhishixingqiu {
+  color: #16b998;
+}
+.ib-niuke {
+  color: #32ca99;
+}
+.ib-xianyu {
+  color: #ffe60f;
+}
+.ib-momo {
+  color: #1e78eb;
+}
+.ib-aifadian-line {
+  color: #946ce6;
+}
+.ib-whatsapp-line {
+  color: #25d366;
+}
+.ib-ximalaya {
+  color: #fa2800;
+}
+.ib-tieba {
+  color: #614ec2;
+}
+.ib-sspai {
+  color: #da282a;
+}
+.ib-line-line {
+  color: #00c300;
+}
+.ib-jike {
+  color: #ffe411;
+}
+.ib-kuaishou {
+  color: #ff4906;
+}
+.ib-minecraft {
+  color: #52a435;
+}
+.ib-bluesky {
+  color: #0085ff;
+}
+.ib-douban {
+  color: #00b51d;
+}
+.ib-linkedin {
+  color: #0a66c2;
+}
+.ib-reddit {
+  color: #ff5700;
+}
+.ib-stack-overflow {
+  color: #e7700d;
+}
+.ib-codepen {
+  color: #000;
+}
+.ib-qqmusic {
+  color: #31c27c;
+}
+.ib-youtube {
+  color: #ff0000;
+}
+.ib-weibo {
+  color: #df2029;
+}
+.ib-facebook-fill {
+  color: #1877f2;
+}
+.ib-ins-line {
+  color: #e4405f;
+}
+.ib-bilibili-line {
+  color: #00aeec;
+}
+.ib-discord-line {
+  color: #5865f2;
+}
+.ib-pixiv {
+  color: #0096fa;
+}
+.ib-gitee {
+  color: #c71d23;
+}
+.ib-xiaohongshu {
+  color: #ff2442;
+}
+.ib-toutiao {
+  color: #f04142;
+}
+.ib-csdn {
+  color: #fc5531;
+}
+.ib-telegram {
+  color: #0088cc;
+}
+.ib-jianshu {
+  color: #ea6f5a;
+}
+.ib-douyin {
+  color: #ee1d51;
+}
+.ib-ixigua {
+  color: #fe3355;
+}
+.ib-weixin {
+  color: #09b83e;
+}
+.ib-zhihu {
+  color: #1772f6;
+}
+.ib-github {
+  color: #1f2328;
+}
+.ib-twitter-x {
+  color: #000;
+}
+.ib-qq {
+  background: linear-gradient(135deg, #00d0ff, #ce69ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.ib-wangyiyun {
+  color: #c20c0c;
+}
+.ib-twitch {
+  color: #9146ff;
+}
+.ib-leetcode {
+  color: #ffa116;
+}
+.ib-acfun {
+  color: #fd4c5d;
+}
+.ib-pan-baidu {
+  color: #06a7ff;
+}
+
+:root[theme='dark'] {
+  .ib-github {
+    color: #fff;
+  }
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2.5px;
+  background-clip: padding-box;
+  background-color: var(--scroll-thumb);
+  background-image: linear-gradient(
+    45deg,
+    var(--scroll-thumb-g) 25%,
+    transparent 0,
+    transparent 50%,
+    var(--scroll-thumb-g) 0,
+    var(--scroll-thumb-g) 75%,
+    transparent 0,
+    transparent
+  );
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}

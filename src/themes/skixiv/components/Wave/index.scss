@@ -1,0 +1,67 @@
+.sk-waves {
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  // overflow: hidden;
+}
+
+.waves-content {
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -0.6875rem;
+  // min-height: 3.125rem;
+  // max-height: 9.375rem;
+  position: relative;
+  .parallax {
+    & > use {
+      -webkit-animation: wave 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+      animation: wave 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+      &:nth-child(1) {
+        -webkit-animation-delay: -2s;
+        animation-delay: -2s;
+        -webkit-animation-duration: 7s;
+        animation-duration: 7s;
+        fill: var(--bg);
+      }
+      &:nth-child(2) {
+        -webkit-animation-delay: -3s;
+        animation-delay: -3s;
+        -webkit-animation-duration: 10s;
+        animation-duration: 10s;
+        fill: var(--bg);
+        opacity: 0.7;
+      }
+      &:nth-child(3) {
+        -webkit-animation-delay: -4s;
+        animation-delay: -4s;
+        -webkit-animation-duration: 13s;
+        animation-duration: 13s;
+        fill: var(--bg);
+        opacity: 0.5;
+      }
+      &:nth-child(4) {
+        -webkit-animation-delay: -5s;
+        animation-delay: -5s;
+        -webkit-animation-duration: 16s;
+        animation-duration: 16s;
+        fill: var(--bg);
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .waves-content {
+    height: 12vw;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}

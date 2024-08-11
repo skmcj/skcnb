@@ -1,0 +1,115 @@
+/* 蜂巢布局 */
+.sk-cate-list {
+  margin-top: 24px;
+  display: grid;
+  // 每列有x个：repeat(2x, 3.47em)
+  grid-template-columns: repeat(12, 3.47em);
+  font-size: 12px;
+  row-gap: calc(2em + 10px);
+  column-gap: 5px;
+  padding: 2.94em 10px;
+  justify-content: center;
+}
+
+.sk-cate-item {
+  position: relative;
+  width: 6.94em;
+  height: 4em;
+  grid-column-end: span 2;
+  // 定义 x 为 grid 列数的一半
+  // x(n+1)+(x-1)n+1
+  // (2*x-1)n+x+1
+  // &:nth-child(11n+7) {
+  //   grid-column-end: span 3;
+  //   margin-left: calc(3.47em + 5px);
+  // }
+  filter: drop-shadow(3px 3px 3px var(--card-bsd));
+}
+
+.sk-cate-item-inner {
+  position: absolute;
+  top: -2em;
+  left: 0;
+  width: 6.94em;
+  height: 8em;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background-color: #83ccd2;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(135deg,#000c40,#607d8b);
+  &:hover {
+    transform: scale(1.1);
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.sk-cate-item-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-text);
+  font-family: 'yozai';
+  gap: 3px;
+  text-align: center;
+  .name {
+    font-size: 14px;
+  }
+  .count {
+    font-size: 12px;
+  }
+}
+
+
+
+@media (min-width: 1201px) and (max-width: 1680px) {
+  .sk-cate-list {
+    grid-template-columns: repeat(16, 3.47em);
+  }
+  .sk-cate-item {
+    &:nth-child(15n+9) {
+      grid-column-end: span 3;
+      margin-left: calc(3.47em + 5px);
+    }
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1200px) {
+  .sk-cate-list {
+    grid-template-columns: repeat(10, 3.47em);
+  }
+  .sk-cate-item {
+    &:nth-child(9n+6) {
+      grid-column-end: span 3;
+      margin-left: calc(3.47em + 5px);
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 959px) {
+  .sk-cate-list {
+    grid-template-columns: repeat(8, 3.47em);
+  }
+  .sk-cate-item {
+    &:nth-child(7n+5) {
+      grid-column-end: span 3;
+      margin-left: calc(3.47em + 5px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sk-cate-list {
+    grid-template-columns: repeat(6, 3.47em);
+  }
+  .sk-cate-item {
+    &:nth-child(5n+4) {
+      grid-column-end: span 3;
+      margin-left: calc(3.47em + 5px);
+    }
+  }
+}

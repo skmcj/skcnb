@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主题</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px 8px;
+            box-sizing: border-box;
+            padding: 12px;
+        }
+
+        .tab {
+            flex-shrink: 0;
+            border-radius: 5px;
+            padding: 5px 12px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgb(107, 121, 142);
+            transition: box-shadow 0.3s ease-in-out;
+            box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.3), -3px -3px 6px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .tab a {
+            text-decoration: none;
+            color: rgb(107, 121, 142);
+            transition: color 0.3s ease-in-out;
+            font-size: 16px;
+        }
+
+        .tab:hover {
+            box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3), -2px -2px 5px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .tab:hover a {
+            color: #509296;
+        }
+
+        .tab:active {
+            box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3), -1px -1px 2px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .tab:active a {
+            color: #509296;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main"></main>
+</body>
+<script>
+    const tabs = [
+        {
+            'name': '首页',
+            'uri': './templates/home.html'
+        },
+        {
+            'name': '分类',
+            'uri': './templates/post-categories.html'
+        },
+        {
+            'name': '类别详情',
+            'uri': './templates/category-2391599.html'
+        },
+        {
+            'name': '文章详情',
+            'uri': './templates/post-detail.html'
+        },
+        {
+            'name': '排行榜',
+            'uri': './templates/most-viewed.html'
+        },
+        {
+            'name': '标签',
+            'uri': './templates/tag.html'
+        },
+        {
+            'name': '标签详情',
+            'uri': './templates/tag-detail.html'
+        },
+        {
+            'name': '友链',
+            'uri': './templates/flinks.html'
+        },
+        {
+            'name': '最新评论',
+            'uri': './templates/comments.html'
+        },
+        {
+            'name': '档案',
+            'uri': './templates/archive.html'
+        },
+        {
+            'name': '相册',
+            'uri': './templates/gallery.html'
+        },
+        {
+            'name': '相册详情',
+            'uri': './templates/gallery-493225.html'
+        }
+    ]
+    const main = document.getElementById('main');
+    for (const item of tabs) {
+        const tab = document.createElement('div')
+        tab.classList.add('tab')
+        const link = document.createElement('a')
+        link.setAttribute('href', item.uri)
+        const text = document.createElement('span');
+        text.innerText = item.name;
+        link.appendChild(text);
+        tab.appendChild(link)
+        main.appendChild(tab)
+    }
+</script>
+
+</html>

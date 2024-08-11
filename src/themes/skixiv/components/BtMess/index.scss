@@ -1,0 +1,136 @@
+.sk-btmess {
+  box-sizing: border-box;
+  margin: 12px;
+  margin-top: 36px;
+  padding: 24px 24px 36px 24px;
+  background: linear-gradient(180deg,var(--btmess-bg),var(--bg));
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  border-radius: 24px 24px 0 0;
+}
+
+.sk-btmess-list {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.sk-btmess-title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  span {
+    font-family: 'zcool-hyt';
+    margin: 0 5px;
+    flex-shrink: 0;
+    color: var(--btmess-title);
+    font-size: 18px;
+  }
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    border: 1px dashed var(--btmess-title);
+  }
+  &::before {
+    width: 27px;
+  }
+  &::after {
+    flex-grow: 1;
+  }
+}
+.sk-btmess-content {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.sk-btmess-item {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  .no {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-family: 'zcool-hyt';
+    font-size: 27px;
+    color: var(--btmess-no);
+    margin-right: 3px;
+  }
+  .content {
+    min-height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    font-family: 'yozai';
+    flex-grow: 1;
+    min-width: 0;
+    margin-right: 6px;
+    span {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+      white-space: nowrap;
+    }
+    .sk-btmess-link {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+      white-space: nowrap;
+      color: var(--btmess-text);
+    }
+    .text {
+      font-size: 14px;
+      color: var(--btmess-text);
+    }
+    .desc {
+      box-sizing: border-box;
+      width: 100%;
+      font-size: 12px;
+      color: var(--btmess-desc);
+      margin-left: 5px;
+    }
+    div.desc {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .at {
+        flex-shrink: 0;
+      }
+    }
+  }
+  .more {
+    &.icon {
+      width: 15px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 3px 0px 0px 3px;
+      box-shadow: inset 1px 0px 3px 0px var(--card-bsd);
+    }
+    &.text {
+      margin-top: auto;
+    }
+    font-size: 12px;
+    color: var(--btmess-icon);
+  }
+}
+
+.sk-btmess-link {
+  outline: none;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .sk-btmess {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
